@@ -2,5 +2,7 @@ loguru==0.6.0
 flask==2.2.3
 pandas==2.0.0
 scikit-surprise==1.1.3
+scikit-learn
 xlrd==2.0.1
 surprise
+fastai
