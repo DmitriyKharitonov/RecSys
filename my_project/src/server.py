@@ -5,6 +5,16 @@ import pandas as pd
 from loguru import logger
 from flask import Flask, render_template, request, redirect, url_for
 from .config import *
+import numpy as np
+from collections import defaultdict
+from surprise import Dataset, Reader, KNNWithMeans, accuracy
+from surprise.model_selection import GridSearchCV
+from surprise.model_selection import train_test_split
+from sklearn.model_selection import train_test_split as tts
+from surprise.model_selection import KFold
+from fastai.collab import CollabDataLoaders, collab_learner
+from sklearn.preprocessing import StandardScaler
+from surprise import SVD
 
 # Создаем логгер и отправляем информацию о запуске
 # Важно: логгер в Flask написан на logging, а не loguru,
